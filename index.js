@@ -10,7 +10,7 @@ const db = new pg.Client({
   port: 5432,
 });
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
 
 db.connect();
 
