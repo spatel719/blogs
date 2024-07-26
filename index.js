@@ -1,8 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-const app = express();
-const port = process.env.PORT || 10000;
+
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
@@ -10,7 +9,8 @@ const db = new pg.Client({
   password: "sejal12",
   port: 5432,
 });
-
+const app = express();
+const port = process.env.PORT || 10000;
 
 db.connect();
 
