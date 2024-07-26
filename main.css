@@ -1,0 +1,5 @@
+body{
+    background-image: url("background1.jpg");
+    background: fixed;
+    background-color: red;
+}

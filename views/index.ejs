@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #p2{
+            display: block;
+            background-color:  rgb(157, 157, 219);
+            width: 50%;
+            margin-left: 25%;
+        }
+        h1{
+            text-align: center;
+            text-shadow: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../main.css" rel="stylesheet">
+  
+    <title>Blog Post</title>
+</head>
+<body style="background-image: url(../profile.JPG);">
+    <div id="p2">
+    <form action="/submit" method="POST" style=" padding-top: 20px; text-align: center;">
+       
+        <input type="text" name="blog"  placeholder="Enter Title" />
+       
+        <input type="text" name="description" placeholder="Description..." />
+        <input type="submit" value="Create" />
+      </form>
+    
+      
+    <h1>List Of Blog Posts</h1>
+    <ul>
+        <% if(blogs) { %>
+            <ul>
+                <% blogs.forEach(blog => { %> <!-- Loop through the array -->
+                  <br/>  <li>
+                        <span style="font-weight: 600;"><%= blog.title %> : </span>
+                        
+                    </li>
+                    Description:<%= blog.description %><br />
+                    <input type="button" value="update">
+                    <input type="button" value="Delete">
+            
+                <% }); %>
+                
+            </ul>
+               
+            <% } else { %>
+                <li><a>Lemon Blueberry Bars</a></li>
+              <li><a>Spiced Cherry Buckle</a></li>
+              <li><a>Kale Pesto Chicken Strata</a></li>
+              <li><a>Egg-in-a-hole Burgers</a></li>
+              <li><a>Herbed Egg Salad Wrap</a></li>
+              <li><a>Classic Devilled Eggs</a></li>
+              <li><a>Layered Vegetable Salad</a></li>
+              <li><a>Egg Salad Boats</a></li>
+              <li><a>Layered Devilled Egg Pasta Salad</a></li>
+              <% } %>
+        
+              
+              
+    </ul>
+</div>
+<script>
+    document.getElementById("title").style.color = "blue";
+    </script>
+</body>
+</html>
